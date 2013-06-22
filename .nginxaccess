@@ -1,0 +1,59 @@
+#rewrite ^/taobao/subsidy.html$ /index.php/taobao/subsidy last;
+
+# www.mizhe.com
+#if ($http_host ~* ^(www|dev)\.mizhe\.com$) {
+#    rewrite ^/zhe/(\d+)-(\d*)-(\d*)\.html$ http://dazhe.mizhe.com/zhe/$1-$2-$3.html permanent;
+#    
+#    rewrite ^/PP(.+)$ /index.php/member/partner/$1 last;
+#    rewrite ^/p(\d+)$ /index.php/member/partner/$1?old=true last;
+#    
+#    rewrite ^/zhe/yj.html /yj.php last;
+#    rewrite ^/yj.html /yj.php last;
+#    rewrite ^/banlv.html /index.php/banlv/index last;
+#    
+#    rewrite ^/error.html$ /index.php/redirect/error last;
+#    rewrite ^/sitemap$ /index.php/dhtml/sitemap last;
+#    rewrite ^/rss$ /index.php/dhtml/rss last;
+#    rewrite ^/dhtml/vip.html$ /index.php/vip/index last;
+#    
+#    rewrite ^/partner.html$ /index.php/member/invite.html last;
+#    rewrite ^/help\/*$ /index.php/help/center.html last;
+#    
+#    rewrite ^/r/(.+)$ /index.php/redirect/go/$1 last;
+#    
+#    rewrite ^/rebate/item/([0-9]+)\.html /index.php/search/item.html?q=http://item.taobao.com/item.htm?id=$1 last;
+#    rewrite ^/r-si-(.+)\.html$ /index.php/redirect/shop_item.html?uid=$1 last;
+#    
+#    rewrite ^/openid/qq/joy.html$ http://joy.mizhe.com/callback/qq.php permanent;
+#    
+#    rewrite ^/fanli/(\d+).html$ http://fanli.mizhe.com/mall/$1.html permanent;
+#    rewrite ^/fanli/([^\/]*).html$ http://fanli.mizhe.com/mall/$1.html permanent;
+#    
+#    rewrite ^/discount/items/([^\-]+)\.html$ http://dazhe.mizhe.com/items/$1.html permanent;
+#    rewrite ^/discount/items/([^\-]*)-([0-9]*)-([^\-]*)\.html$ http://dazhe.mizhe.com/items/$1-$2-$3--.html permanent;
+#    rewrite ^/discount/items/([^\-]*)-([0-9]*)-([^\-]*)-([0-9]*)\.html$ http://dazhe.mizhe.com/items/$1-$2-$3--$4.html permanent;
+#    rewrite ^/discount/items/([^\-]*)-([0-9]*)-([^\-]*)-([^\-]*)-([0-9]*)\.html$ http://dazhe.mizhe.com/items/$1-$2-$3-$4-$5.html permanent;
+#    
+#    rewrite ^/order/latest-([0-9]+).html$ http://item.mizhe.com/items/$1.html permanent;
+#    
+#    rewrite ^/ju$ http://ju.mizhe.com permanent;
+#    rewrite ^/tejia$ http://tejia.mizhe.com permanent;
+#    rewrite ^/discount$ http://dazhe.mizhe.com permanent;
+#    rewrite ^/shop\/*$ http://dianpu.mizhe.com permanent;
+#    rewrite ^/brand$ http://dianpu.mizhe.com permanent;
+#    rewrite ^/cat.html$ http://dianpu.mizhe.com permanent;
+#    
+#    rewrite ^/rebate/detail/(i|ju)-([^\-]+)?-(\d+)\.html$ /index.php/redirect/err_404 last;
+#    rewrite ^/rebate/detail/s-([^\-]+)?-(\d+)\.html$ /index.php/redirect/err_404 last;
+#    rewrite ^/fanli/go/(\d+)$ /index.php/redirect/err_404 last;
+#    rewrite ^/shop/(.*).html$ /index.php/redirect/err_404 last;
+#    rewrite ^/rebate/items/(.*).html$ /index.php/redirect/err_404 last;
+#    
+#    rewrite ^/help/(.*)$ /index.php/help/$1?_frontcache_=y? last;
+#
+#}
+
+#www.ci.com
+if ($http_host ~* ^www\.ci\.com$) {
+    rewrite ^/(.*).html$ /index.php/$1 last;
+}
